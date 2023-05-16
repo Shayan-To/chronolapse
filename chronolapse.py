@@ -578,7 +578,7 @@ class ChronoFrame(chronoFrame):
             try:
                 # use two monitors if checked and available
                 if (self.getConfig('screenshot_dual_monitor')
-                    and wx.Display_GetCount() > 0):
+                    and wx.Display.GetCount() > 0):
                     second = wx.Display(1)
                     x2, y2, width2, height2 = second.GetGeometry()
 
@@ -589,7 +589,7 @@ class ChronoFrame(chronoFrame):
 
                     rect = wx.Rect(x3, y3, width3, height3)
             except Exception as e:
-                self.warning(
+                logging.warning(
                     "Exception while attempting to capture second "
                     + "monitor: %s" % repr(e))
 
@@ -599,7 +599,7 @@ class ChronoFrame(chronoFrame):
         #Create a Bitmap that will later on hold the screenshot image
         #Note that the Bitmap must have a size big enough to hold the screenshot
         #-1 means using the current default colour depth
-        bmp = wx.EmptyBitmap(rect.width, rect.height)
+        bmp = wx.Bitmap(rect.width, rect.height)
 
         #Create a memory DC that will be used for actually taking the screenshot
         memDC = wx.MemoryDC()
@@ -1943,10 +1943,13 @@ class TaskBarIcon(wx.adv.TaskBarIcon):
         self.set_icon_action_text(False)
 
     def set_icon_action_text(self, minimized=True):
-        if minimized:
-            self.menu.FindItemById(self.wx_id).SetText("Restore")
-        else:
-            self.menu.FindItemById(self.wx_id).SetText("Minimize")
+        # import traceback
+        # traceback.print_stack()
+        pass
+        # if minimized:
+            # self.menu.FindItemById(self.wx_id).SetText("Restore")
+        # else:
+            # self.menu.FindItemById(self.wx_id).SetText("Minimize")
 
     def iconized(self, event):
         # bound on non-windows only
@@ -1970,7 +1973,7 @@ class TaskBarIcon(wx.adv.TaskBarIcon):
         else:
             self.MainFrame.Bind(wx.EVT_ICONIZE, self.iconized)
         self.menu=wx.Menu()
-        self.menu.Append(self.wx_id, "Minimize","...")
+        self.menu.Append(self.wx_id, "Minimize / Restore","...")
         self.menu.AppendSeparator()
         self.menu.Append(wx.ID_EXIT, "Close Chronolapse")
 
