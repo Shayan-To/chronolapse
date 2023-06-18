@@ -1181,8 +1181,9 @@
                             <selection>0</selection>
                             <tooltip>Select the file format in which screen captures will be saved</tooltip>
                             <choices>
-                                <choice>jpg</choice>
+                                <choice>bmp</choice>
                                 <choice>png</choice>
+                                <choice>jpg</choice>
                                 <choice>gif</choice>
                             </choices>
                         </object>
@@ -1365,8 +1366,9 @@
                             <selection>0</selection>
                             <tooltip>Select the file format in which webcam captures will be saved</tooltip>
                             <choices>
-                                <choice>jpg</choice>
+                                <choice>bmp</choice>
                                 <choice>png</choice>
+                                <choice>jpg</choice>
                                 <choice>gif</choice>
                             </choices>
                         </object>

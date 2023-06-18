@@ -62,7 +62,7 @@ class chronoFrame(wx.Frame):
         # begin wxGlade: chronoFrame.__init__
         kwds["style"] = wx.DEFAULT_FRAME_STYLE
         wx.Frame.__init__(self, *args, **kwds)
-        
+
         # Menu Bar
         self.chronoframe_menubar = wx.MenuBar()
         self.file = wx.Menu()
@@ -488,7 +488,7 @@ class screenshotConfigDialog(wx.Dialog):
         self.screenshotsavefoldertext = wx.TextCtrl(self, wx.ID_ANY, "")
         self.screenshotsavefolderbrowse = wx.Button(self, wx.ID_ANY, _("..."))
         self.label_7 = wx.StaticText(self, wx.ID_ANY, _("File Format:"))
-        self.screenshotformatcombo = wx.ComboBox(self, wx.ID_ANY, choices=[_("jpg"), _("png"), _("gif")], style=wx.CB_DROPDOWN | wx.CB_DROPDOWN)
+        self.screenshotformatcombo = wx.ComboBox(self, wx.ID_ANY, choices=[_("bmp"), _("png"), _("jpg"), _("gif")], style=wx.CB_DROPDOWN | wx.CB_DROPDOWN)
         self.screenshotconfigsave = wx.Button(self, wx.ID_OK, "")
 
         self.__set_properties()
@@ -584,7 +584,7 @@ class webcamConfigDialog(wx.Dialog):
         self.webcamsavefoldertext = wx.TextCtrl(self, wx.ID_ANY, "")
         self.webcamsavefolderbrowse = wx.Button(self, wx.ID_ANY, _("..."))
         self.label_11 = wx.StaticText(self, wx.ID_ANY, _("File Format:"))
-        self.webcamformatcombo = wx.ComboBox(self, wx.ID_ANY, choices=[_("jpg"), _("png"), _("gif")], style=wx.CB_DROPDOWN | wx.CB_DROPDOWN)
+        self.webcamformatcombo = wx.ComboBox(self, wx.ID_ANY, choices=[_("bmp"), _("png"), _("jpg"), _("gif")], style=wx.CB_DROPDOWN | wx.CB_DROPDOWN)
         self.webcamsavebutton = wx.Button(self, wx.ID_OK, "")
 
         self.__set_properties()

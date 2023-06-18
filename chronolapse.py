@@ -653,6 +653,10 @@ class ChronoFrame(chronoFrame):
             fileName = os.path.join(folder,"%s%s.png" % (prefix, filename))
             img.SaveFile(fileName, wx.BITMAP_TYPE_PNG)
 
+        elif format == 'bmp':
+            fileName = os.path.join(folder,"%s%s.bmp" % (prefix, filename))
+            img.SaveFile(fileName, wx.BITMAP_TYPE_BMP)
+
         else:
             fileName = os.path.join(folder,"%s%s.jpg" % (prefix, filename))
             img.SaveFile(fileName, wx.BITMAP_TYPE_JPEG)
